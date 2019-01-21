@@ -15,7 +15,7 @@ namespace Line.Messaging
         /// Max: 20 characters
         /// </summary>
         public string Label { get; }
-        
+
         public CameraRollTemplateAction(string label)
         {
             Label = label.Substring(0, Math.Min(label.Length, 20));
@@ -23,7 +23,7 @@ namespace Line.Messaging
 
         internal static CameraRollTemplateAction CreateFrom(dynamic dynamicObject)
         {
-            return new CameraRollTemplateAction((string)dynamicObject?.label);
+            return new CameraRollTemplateAction((string) dynamicObject?.label);
         }
     }
 }

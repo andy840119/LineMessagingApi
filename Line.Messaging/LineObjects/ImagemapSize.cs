@@ -9,7 +9,7 @@
         /// Default rich menu size
         /// </summary>
         public static ImagemapSize RichMenuLong { get; } = new ImagemapSize(2500, 1686);
-        
+
         /// <summary>
         /// Half rich menu size.
         /// </summary>
@@ -32,4 +32,3 @@
         }
     }
 }
-    

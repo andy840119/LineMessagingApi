@@ -114,9 +114,6 @@ namespace Line.Messaging
         /// </summary>
         public TextComponent()
         {
-
         }
-        
     }
-    
 }

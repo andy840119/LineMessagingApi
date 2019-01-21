@@ -70,10 +70,11 @@ namespace Line.Messaging
         /// <param name="video">
         /// Video to play on imagemap
         /// </param>
-        public ImagemapMessage(string baseUrl, string altText, ImagemapSize baseSize, IList<IImagemapAction> actions, QuickReply quickReply = null, Video video = null)
+        public ImagemapMessage(string baseUrl, string altText, ImagemapSize baseSize, IList<IImagemapAction> actions,
+            QuickReply quickReply = null, Video video = null)
         {
             BaseUrl = baseUrl;
-            AltText = altText.Substring(0, Math.Min(altText.Length, 400)); ;
+            AltText = altText.Substring(0, Math.Min(altText.Length, 400));
             BaseSize = baseSize;
             Actions = actions;
             QuickReply = quickReply;

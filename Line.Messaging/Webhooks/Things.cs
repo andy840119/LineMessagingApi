@@ -25,6 +25,5 @@
             DeviceId = deviceId;
             Type = type;
         }
-
     }
 }

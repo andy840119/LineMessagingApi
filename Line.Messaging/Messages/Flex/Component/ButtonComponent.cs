@@ -86,7 +86,6 @@ namespace Line.Messaging
         /// </summary>
         public ButtonComponent()
         {
-
         }
     }
 }

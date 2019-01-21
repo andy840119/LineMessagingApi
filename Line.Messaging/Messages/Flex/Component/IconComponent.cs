@@ -64,7 +64,6 @@ namespace Line.Messaging
         /// </summary>
         public IconComponent()
         {
-
         }
     }
 }

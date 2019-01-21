@@ -15,7 +15,7 @@ namespace Line.Messaging
         /// Max: 20 characters
         /// </summary>
         public string Label { get; }
-        
+
         public LocationTemplateAction(string label)
         {
             Label = label.Substring(0, Math.Min(label.Length, 20));
@@ -23,7 +23,7 @@ namespace Line.Messaging
 
         internal static LocationTemplateAction CreateFrom(dynamic dynamicObject)
         {
-            return new LocationTemplateAction((string)dynamicObject?.label);
+            return new LocationTemplateAction((string) dynamicObject?.label);
         }
     }
 }

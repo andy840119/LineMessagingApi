@@ -19,28 +19,27 @@ namespace Line.Messaging.Webhooks
         /// <param name="channelSecret">ChannelSecret</param>
         /// <param name="botUserId">BotUserId</param>
         /// <returns>List of WebhookEvent</returns>
-        public static async Task<IEnumerable<WebhookEvent>> GetWebhookEventsAsync(this HttpRequestMessage request, string channelSecret, string botUserId = null)
+        public static async Task<IEnumerable<WebhookEvent>> GetWebhookEventsAsync(this HttpRequestMessage request,
+            string channelSecret, string botUserId = null)
         {
-            if (request == null) { throw new ArgumentNullException(nameof(request)); }
-            if (channelSecret == null) { throw new ArgumentNullException(nameof(channelSecret)); }
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
+
+            if (channelSecret == null)
+                throw new ArgumentNullException(nameof(channelSecret));
 
             var content = await request.Content.ReadAsStringAsync();
 
             var xLineSignature = request.Headers.GetValues("X-Line-Signature").FirstOrDefault();
             if (string.IsNullOrEmpty(xLineSignature) || !VerifySignature(channelSecret, xLineSignature, content))
-            {
                 throw new InvalidSignatureException("Signature validation faild.");
-            }
-            
+
             dynamic json = JsonConvert.DeserializeObject(content);
-            
+
             if (!string.IsNullOrEmpty(botUserId))
-            {
-                if(botUserId != (string)json.destination)
-                {
+                if (botUserId != (string) json.destination)
                     throw new UserIdMismatchException("Bot user ID does not match.");
-                }
-            }
+
             return WebhookEventParser.ParseEvents(json.events);
         }
 
@@ -82,9 +81,9 @@ namespace Line.Messaging.Webhooks
         /// </summary>
         private static bool SlowEquals(byte[] a, byte[] b)
         {
-            uint diff = (uint)a.Length ^ (uint)b.Length;
+            uint diff = (uint) a.Length ^ (uint) b.Length;
             for (int i = 0; i < a.Length && i < b.Length; i++)
-                diff |= (uint)(a[i] ^ b[i]);
+                diff |= (uint) (a[i] ^ b[i]);
             return diff == 0;
         }
     }

@@ -47,6 +47,5 @@
             Result = (result == "ok") ? LinkResult.OK : LinkResult.Failed;
             Nonce = nonce;
         }
-
     }
 }

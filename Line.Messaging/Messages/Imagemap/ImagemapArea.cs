@@ -10,14 +10,17 @@
         /// Horizontal position relative to the top-left corner of the area.
         /// </summary>
         public int X { get; }
+
         /// <summary>
         /// Vertical position relative to the top-left corner of the area.
         /// </summary>
         public int Y { get; }
+
         /// <summary>
         /// Width of the tappable area
         /// </summary>
         public int Width { get; }
+
         /// <summary>
         /// Height of the tappable area
         /// </summary>

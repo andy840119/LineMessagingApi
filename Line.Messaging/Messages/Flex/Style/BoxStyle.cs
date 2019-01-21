@@ -21,7 +21,7 @@ namespace Line.Messaging
         /// The default value is false. </para>
         /// <para>(Optional)</para>
         /// </summary>
-        
+
         public bool Separator { get; set; }
 
         /// <summary>

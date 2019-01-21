@@ -9,7 +9,7 @@ namespace Line.Messaging
         public CamelCaseJsonSerializerSettings()
         {
             ContractResolver = new CamelCasePropertyNamesContractResolver();
-            Converters.Add(new StringEnumConverter { CamelCaseText = true });
+            Converters.Add(new StringEnumConverter {CamelCaseText = true});
             NullValueHandling = NullValueHandling.Ignore;
         }
     }

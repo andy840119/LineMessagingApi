@@ -22,7 +22,8 @@
         /// <param name="id">Message ID</param>
         /// <param name="contentProvider">ContentProvider Object</param>
         /// <param name="duration">Duration</param>
-        public MediaEventMessage(EventMessageType type, string id, ContentProvider contentProvider = null, int? duration = null) : base(type, id)
+        public MediaEventMessage(EventMessageType type, string id, ContentProvider contentProvider = null,
+            int? duration = null) : base(type, id)
         {
             ContentProvider = contentProvider;
             Duration = duration;

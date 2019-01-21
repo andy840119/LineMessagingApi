@@ -23,7 +23,6 @@ namespace Line.Messaging
         /// <param name="altText">alt text</param>
         public BubbleContainerFlexMessage(string altText) : base(altText)
         {
-
         }
 
         /// <summary>

@@ -18,6 +18,4 @@ namespace Line.Messaging.Webhooks
             Left = new Moved(members);
         }
     }
-
-
 }

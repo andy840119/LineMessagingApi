@@ -26,33 +26,40 @@ namespace Line.Messaging.Webhooks
         internal static EventMessage CreateFrom(dynamic dynamicObject)
         {
             var message = dynamicObject?.message;
-            if (message == null) { return null; }
-            if (!Enum.TryParse((string)message.type, true, out EventMessageType messageType))
-            {
+            if (message == null)
                 return null;
-            }
+
+            if (!Enum.TryParse((string) message.type, true, out EventMessageType messageType))
+                return null;
+
             switch (messageType)
             {
                 case EventMessageType.Text:
-                    return new TextEventMessage((string)message.id, (string)message.text);
+                    return new TextEventMessage((string) message.id, (string) message.text);
                 case EventMessageType.Image:
                 case EventMessageType.Audio:
                 case EventMessageType.Video:
                     ContentProvider contentProvider = null;
-                    if (Enum.TryParse((string)message.contentProvider?.type,true, out ContentProviderType providerType))
+                    if (Enum.TryParse((string) message.contentProvider?.type, true,
+                        out ContentProviderType providerType))
                     {
                         contentProvider = new ContentProvider(providerType,
-                                (string)message.contentProvider?.originalContentUrl,
-                                (string)message.contentProvider?.previewContentUrl);
+                            (string) message.contentProvider?.originalContentUrl,
+                            (string) message.contentProvider?.previewContentUrl);
                     }
-                    return new MediaEventMessage(messageType, (string)message.id, contentProvider, (int?)message.duration);
+
+                    return new MediaEventMessage(messageType, (string) message.id, contentProvider,
+                        (int?) message.duration);
                 case EventMessageType.Location:
-                    return new LocationEventMessage((string)message.id, (string)message.title, (string)message.address,
-                        (decimal)message.latitude, (decimal)message.longitude);
+                    return new LocationEventMessage((string) message.id, (string) message.title,
+                        (string) message.address,
+                        (decimal) message.latitude, (decimal) message.longitude);
                 case EventMessageType.Sticker:
-                    return new StickerEventMessage((string)message.id, (string)message.packageId, (string)message.stickerId);
+                    return new StickerEventMessage((string) message.id, (string) message.packageId,
+                        (string) message.stickerId);
                 case EventMessageType.File:
-                    return new FileEventMessage((string)message.id, (string)message.fileName, (long)message.fileSize);
+                    return new FileEventMessage((string) message.id, (string) message.fileName,
+                        (long) message.fileSize);
                 default:
                     return null;
             }

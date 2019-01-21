@@ -34,9 +34,6 @@ namespace Line.Messaging
         /// </summary>
         public SpacerComponent()
         {
-
         }
-
-
     }
 }

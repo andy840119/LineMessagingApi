@@ -122,8 +122,6 @@ namespace Line.Messaging
         /// </summary>
         public ImageComponent()
         {
-
         }
-
     }
 }

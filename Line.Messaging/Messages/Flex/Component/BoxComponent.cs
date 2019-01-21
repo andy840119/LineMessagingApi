@@ -24,11 +24,13 @@ namespace Line.Messaging
         {
             Layout = layout;
         }
-        
+
         /// <summary>
         /// Constructor
         /// </summary>
-        public BoxComponent() { }
+        public BoxComponent()
+        {
+        }
 
         /// <summary>
         /// The placement style of components in this box. Specify one of the following values

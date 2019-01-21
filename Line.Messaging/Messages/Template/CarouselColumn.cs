@@ -86,7 +86,8 @@ namespace Line.Messaging
             ThumbnailImageUrl = thumbnailImageUrl;
             Title = title?.Substring(0, Math.Min(title.Length, 40));
             Text = (string.IsNullOrEmpty(thumbnailImageUrl) && string.IsNullOrEmpty(title))
-                ? text.Substring(0, Math.Min(text.Length, 120)) : text.Substring(0, Math.Min(text.Length, 60));
+                ? text.Substring(0, Math.Min(text.Length, 120))
+                : text.Substring(0, Math.Min(text.Length, 60));
             Actions = actions ?? new List<ITemplateAction>();
             ImageBackgroundColor = imageBackgroundColor;
             DefaultAction = defaultAction;

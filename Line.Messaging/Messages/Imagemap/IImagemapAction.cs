@@ -4,5 +4,5 @@
     {
         ImagemapActionType Type { get; }
         ImagemapArea Area { get; }
-    }    
+    }
 }

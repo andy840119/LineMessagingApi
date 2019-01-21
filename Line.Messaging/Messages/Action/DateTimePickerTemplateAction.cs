@@ -79,7 +79,8 @@ namespace Line.Messaging
         /// Largest date or time value that can be selected.
         /// Must be greater than the min value.
         /// </param>
-        public DateTimePickerTemplateAction(string label, string data, DateTimePickerMode mode, string initial = null, string min = null, string max = null)
+        public DateTimePickerTemplateAction(string label, string data, DateTimePickerMode mode, string initial = null,
+            string min = null, string max = null)
         {
             Initialize(label, data, mode, initial, min, max);
         }
@@ -114,16 +115,18 @@ namespace Line.Messaging
         /// Largest date or time value that can be selected.
         /// Must be greater than the min value.
         /// </param>
-        public DateTimePickerTemplateAction(string label, string data, DateTimePickerMode mode, DateTime? initial = null, DateTime? min = null, DateTime? max = null)
+        public DateTimePickerTemplateAction(string label, string data, DateTimePickerMode mode,
+            DateTime? initial = null, DateTime? min = null, DateTime? max = null)
         {
             var format = GetDateTimeFormat(mode);
             Initialize(label, data, mode,
-                initial == null ? null : ((DateTime)initial).ToString(format),
-                min == null ? null : ((DateTime)min).ToString(format),
-                max == null ? null : ((DateTime)max).ToString(format));
+                initial == null ? null : ((DateTime) initial).ToString(format),
+                min == null ? null : ((DateTime) min).ToString(format),
+                max == null ? null : ((DateTime) max).ToString(format));
         }
 
-        internal void Initialize(string label, string data, DateTimePickerMode mode, string initial, string min, string max)
+        internal void Initialize(string label, string data, DateTimePickerMode mode, string initial, string min,
+            string max)
         {
             Label = label?.Substring(0, Math.Min(label.Length, 20));
             Data = data.Substring(0, Math.Min(data.Length, 300));
@@ -148,17 +151,19 @@ namespace Line.Messaging
                     format = "yyyy-MM-ddTHH:mm";
                     break;
             }
+
             return format;
         }
 
         internal static DateTimePickerTemplateAction CreateFrom(dynamic dynamicObject)
         {
-            var mode = (DateTimePickerMode)Enum.Parse(typeof(DateTimePickerMode), dynamicObject?.mode);
+            var mode = (DateTimePickerMode) Enum.Parse(typeof(DateTimePickerMode), dynamicObject?.mode);
             var format = GetDateTimeFormat(mode);
             var initial = DateTime.ParseExact(dynamicObject?.initial, format, null);
             var min = DateTime.ParseExact(dynamicObject?.min, format, null);
             var max = DateTime.ParseExact(dynamicObject?.max, format, null);
-            return new DateTimePickerTemplateAction((string)dynamicObject?.label, (string)dynamicObject?.data, mode, initial, min, max);
+            return new DateTimePickerTemplateAction((string) dynamicObject?.label, (string) dynamicObject?.data, mode,
+                initial, min, max);
         }
     }
 }

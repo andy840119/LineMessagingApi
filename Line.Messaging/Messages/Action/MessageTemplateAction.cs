@@ -45,7 +45,7 @@ namespace Line.Messaging
 
         internal static MessageTemplateAction CreateFrom(dynamic dynamicObject)
         {
-            return new MessageTemplateAction((string)dynamicObject?.label, (string)dynamicObject?.text);
+            return new MessageTemplateAction((string) dynamicObject?.label, (string) dynamicObject?.text);
         }
     }
 }

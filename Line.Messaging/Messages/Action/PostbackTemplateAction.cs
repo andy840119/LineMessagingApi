@@ -74,7 +74,6 @@ namespace Line.Messaging
             {
                 Text = text?.Substring(0, Math.Min(text.Length, 300));
             }
-
         }
 
         internal static PostbackTemplateAction CreateFrom(dynamic dynamicObject)
@@ -86,7 +85,9 @@ namespace Line.Messaging
                 text = dynamicObject?.text;
                 useDisplayText = false;
             }
-            return new PostbackTemplateAction((string)dynamicObject?.label, (string)dynamicObject?.data, text, useDisplayText);
+
+            return new PostbackTemplateAction((string) dynamicObject?.label, (string) dynamicObject?.data, text,
+                useDisplayText);
         }
     }
 }

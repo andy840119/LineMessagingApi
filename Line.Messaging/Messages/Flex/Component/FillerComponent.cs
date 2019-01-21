@@ -9,7 +9,6 @@ namespace Line.Messaging
     /// </summary>
     public class FillerComponent : IFlexComponent
     {
-
         public FlexComponentType Type => FlexComponentType.Filler;
     }
 }

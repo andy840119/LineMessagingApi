@@ -6,8 +6,6 @@ using System.Linq;
 
 namespace Line.Messaging
 {
-
-
     public class CustomStringEnumConverter<TEnum> : StringEnumConverter where TEnum : struct, Enum
     {
         private readonly IDictionary<TEnum, string> enumStrPairs;
@@ -23,11 +21,12 @@ namespace Line.Messaging
             this.enumStrPairs = enumStrPairs ?? new Dictionary<TEnum, string>();
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue,
+            JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.String)
             {
-                var value = (string)reader.Value;
+                var value = (string) reader.Value;
 
                 if (enumStrPairs.Any(kvp => value == kvp.Value))
                 {
@@ -40,8 +39,7 @@ namespace Line.Messaging
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-
-            if (enumStrPairs.TryGetValue((TEnum)value, out string name))
+            if (enumStrPairs.TryGetValue((TEnum) value, out string name))
             {
                 writer.WriteValue(name);
             }
@@ -49,7 +47,6 @@ namespace Line.Messaging
             {
                 base.WriteJson(writer, value, serializer);
             }
-            
         }
     }
 }

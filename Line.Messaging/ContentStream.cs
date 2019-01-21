@@ -15,7 +15,9 @@ namespace Line.Messaging
         {
             get
             {
-                if (_baseStream == null) { throw new ObjectDisposedException(nameof(BaseStream)); }
+                if (_baseStream == null)
+                    throw new ObjectDisposedException(nameof(BaseStream));
+
                 return _baseStream;
             }
         }
@@ -36,7 +38,11 @@ namespace Line.Messaging
 
         public override long Length => BaseStream.Length;
 
-        public override long Position { get => BaseStream.Position; set => BaseStream.Position = value; }
+        public override long Position
+        {
+            get => BaseStream.Position;
+            set => BaseStream.Position = value;
+        }
 
         public override void Flush() => BaseStream.Flush();
 

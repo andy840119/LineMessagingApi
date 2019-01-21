@@ -5,7 +5,8 @@
     /// </summary>
     public class DeviceLinkEvent : DeviceEvent
     {
-        public DeviceLinkEvent(WebhookEventSource source, long timestamp, Things things) : base(source, timestamp, things)
+        public DeviceLinkEvent(WebhookEventSource source, long timestamp, Things things) : base(source, timestamp,
+            things)
         {
         }
     }

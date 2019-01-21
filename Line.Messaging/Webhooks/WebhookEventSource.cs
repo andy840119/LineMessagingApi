@@ -28,27 +28,29 @@ namespace Line.Messaging.Webhooks
 
         internal static WebhookEventSource CreateFrom(dynamic source)
         {
-            if (source == null) { return null; }
-            if (!Enum.TryParse((string)source.type, true, out EventSourceType sourceType))
-            {
+            if (source == null)
                 return null;
-            }
+
+            if (!Enum.TryParse((string) source.type, true, out EventSourceType sourceType))
+                return null;
+
             var sourceId = "";
             switch (sourceType)
             {
                 case EventSourceType.User:
-                    sourceId = (string)source.userId;
+                    sourceId = (string) source.userId;
                     break;
                 case EventSourceType.Group:
-                    sourceId = (string)source.groupId;
+                    sourceId = (string) source.groupId;
                     break;
                 case EventSourceType.Room:
-                    sourceId = (string)source.roomId;
+                    sourceId = (string) source.roomId;
                     break;
                 default:
                     return null;
             }
-            return new WebhookEventSource(sourceType, sourceId, (string)source.userId);
+
+            return new WebhookEventSource(sourceType, sourceId, (string) source.userId);
         }
     }
 }

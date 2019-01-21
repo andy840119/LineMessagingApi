@@ -23,17 +23,18 @@ namespace Line.Messaging
             return new ActionArea()
             {
                 Bounds = new ImagemapArea(
-                    (int)(dynamicObject?.bounds?.x ?? 0),
-                    (int)(dynamicObject?.bounds?.y ?? 0),
-                    (int)(dynamicObject?.bounds?.width ?? 0),
-                    (int)(dynamicObject?.bounds?.height ?? 0)),
+                    (int) (dynamicObject?.bounds?.x ?? 0),
+                    (int) (dynamicObject?.bounds?.y ?? 0),
+                    (int) (dynamicObject?.bounds?.width ?? 0),
+                    (int) (dynamicObject?.bounds?.height ?? 0)),
                 Action = ParseTemplateAction(dynamicObject?.action)
             };
         }
 
         public static ITemplateAction ParseTemplateAction(dynamic dynamicObject)
         {
-            var type = (TemplateActionType)System.Enum.Parse(typeof(TemplateActionType), (string)dynamicObject?.type, true);
+            var type = (TemplateActionType) System.Enum.Parse(typeof(TemplateActionType), (string) dynamicObject?.type,
+                true);
             switch (type)
             {
                 case TemplateActionType.Message:

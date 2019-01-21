@@ -21,7 +21,9 @@ namespace Line.Messaging
         /// <returns>Flex Message</returns>
         public CarouselContainerFlexMessage AddBubbleContainer(BubbleContainer bubbleContainer)
         {
-            if (bubbleContainer == null) { throw new ArgumentNullException(nameof(bubbleContainer)); }
+            if (bubbleContainer == null)
+                throw new ArgumentNullException(nameof(bubbleContainer));
+
             var contents = (Contents as CarouselContainer).Contents;
             contents.Add(bubbleContainer);
             return this;

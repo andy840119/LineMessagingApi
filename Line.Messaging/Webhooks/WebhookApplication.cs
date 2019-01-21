@@ -50,7 +50,6 @@ namespace Line.Messaging.Webhooks
                     case DeviceUnlinkEvent deviceUnlink:
                         await OnDeviceUnlinkAsync(deviceUnlink).ConfigureAwait(false);
                         break;
-
                 }
             }
         }

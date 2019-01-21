@@ -18,7 +18,7 @@ namespace Line.Messaging
         /// Time until channel access token expires in seconds from time the token is issued
         /// </summary>
         public long ExpiresIn { get; set; }
-        
+
         /// <summary>
         /// Bearer
         /// </summary>

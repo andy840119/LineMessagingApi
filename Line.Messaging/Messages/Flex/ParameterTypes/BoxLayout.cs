@@ -13,10 +13,12 @@ namespace Line.Messaging
         /// Components are placed horizontally. The direction property of the bubble container specifies the order.
         /// </summary>
         Horizontal,
+
         /// <summary>
         /// Components are placed vertically from top to bottom.
         /// </summary>
         Vertical,
+
         /// <summary>
         /// Components are placed in the same way as horizontal is specified except the baselines of the components are aligned.
         /// </summary>

@@ -7,7 +7,7 @@ namespace Line.Messaging
     /// https://developers.line.me/en/docs/messaging-api/reference/#text
     /// </summary>
     public class TextMessage : ISendMessage
-    {        
+    {
         public MessageType Type { get; } = MessageType.Text;
 
         /// <summary>

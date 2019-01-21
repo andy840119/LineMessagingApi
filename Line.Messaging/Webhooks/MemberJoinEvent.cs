@@ -12,11 +12,11 @@ namespace Line.Messaging.Webhooks
         /// </summary>
         public Moved Joined { get; }
 
-        public MemberJoinEvent(WebhookEventSource source, long timestamp, string replyToken, IList<WebhookEventSource> members)
+        public MemberJoinEvent(WebhookEventSource source, long timestamp, string replyToken,
+            IList<WebhookEventSource> members)
             : base(WebhookEventType.MemberJoined, source, timestamp, replyToken)
         {
             Joined = new Moved(members);
         }
     }
-
 }

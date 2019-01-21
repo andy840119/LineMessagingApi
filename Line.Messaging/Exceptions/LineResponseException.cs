@@ -19,18 +19,21 @@ namespace Line.Messaging
         public ErrorResponseMessage ResponseMessage { get; set; }
 
         public LineResponseException()
-        {}
+        {
+        }
 
         public LineResponseException(string message) : base(message)
-        {}
+        {
+        }
 
         public LineResponseException(string message, Exception innerException) : base(message, innerException)
-        {}
+        {
+        }
 
         public override string ToString()
         {
             return $"StatusCode={StatusCode}, {ResponseMessage}" + Environment.NewLine
-                + base.ToString();
+                                                                 + base.ToString();
         }
     }
 }

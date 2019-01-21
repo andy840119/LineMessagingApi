@@ -28,10 +28,7 @@ namespace Line.Messaging
         public string Name
         {
             get => _name;
-            set
-            {
-                _name = value?.Substring(0, Math.Min(value.Length, 300));
-            }
+            set { _name = value?.Substring(0, Math.Min(value.Length, 300)); }
         }
 
         /// <summary>
@@ -40,10 +37,7 @@ namespace Line.Messaging
         public string ChatBarText
         {
             get => _chatBarText;
-            set
-            {
-                _chatBarText = value?.Substring(0, Math.Min(value.Length, 14));
-            }
+            set { _chatBarText = value?.Substring(0, Math.Min(value.Length, 14)); }
         }
 
         /// <summary>

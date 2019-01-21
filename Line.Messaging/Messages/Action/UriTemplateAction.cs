@@ -45,7 +45,7 @@ namespace Line.Messaging
 
         internal static UriTemplateAction CreateFrom(dynamic dynamicObject)
         {
-            return new UriTemplateAction((string)dynamicObject?.label, (string)dynamicObject?.uri);
+            return new UriTemplateAction((string) dynamicObject?.label, (string) dynamicObject?.uri);
         }
     }
 }

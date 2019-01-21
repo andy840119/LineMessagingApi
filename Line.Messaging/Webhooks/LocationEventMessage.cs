@@ -25,7 +25,8 @@
         /// </summary>
         public decimal Longitude { get; }
 
-        public LocationEventMessage(string id, string title, string address, decimal latitude, decimal longitude) : base(EventMessageType.Location, id)
+        public LocationEventMessage(string id, string title, string address, decimal latitude, decimal longitude) :
+            base(EventMessageType.Location, id)
         {
             Title = title;
             Address = address;

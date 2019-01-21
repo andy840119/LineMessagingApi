@@ -31,5 +31,4 @@ namespace Line.Messaging
             CamelCaseText = true;
         }
     }
-
 }

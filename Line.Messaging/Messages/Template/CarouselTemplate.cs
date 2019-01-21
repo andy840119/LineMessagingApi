@@ -52,7 +52,8 @@ namespace Line.Messaging
         /// The default value is cover.
         /// </param>
         public CarouselTemplate(IList<CarouselColumn> columns = null,
-            ImageAspectRatioType imageAspectRatio = ImageAspectRatioType.Rectangle, ImageSizeType imageSize = ImageSizeType.Cover)
+            ImageAspectRatioType imageAspectRatio = ImageAspectRatioType.Rectangle,
+            ImageSizeType imageSize = ImageSizeType.Cover)
         {
             Columns = columns ?? new List<CarouselColumn>();
             ImageAspectRatio = imageAspectRatio;

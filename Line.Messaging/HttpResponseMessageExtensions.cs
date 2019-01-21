@@ -23,14 +23,18 @@ namespace Line.Messaging
                 var content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 try
                 {
-                    errorMessage = JsonConvert.DeserializeObject<ErrorResponseMessage>(content, new CamelCaseJsonSerializerSettings());
+                    errorMessage =
+                        JsonConvert.DeserializeObject<ErrorResponseMessage>(content,
+                            new CamelCaseJsonSerializerSettings());
                 }
                 catch
                 {
-                    errorMessage = new ErrorResponseMessage() { Message = content, Details = new ErrorResponseMessage.ErrorDetails[0] };
+                    errorMessage = new ErrorResponseMessage()
+                        {Message = content, Details = new ErrorResponseMessage.ErrorDetails[0]};
                 }
-                throw new LineResponseException(errorMessage.Message) { StatusCode = response.StatusCode, ResponseMessage = errorMessage };
 
+                throw new LineResponseException(errorMessage.Message)
+                    {StatusCode = response.StatusCode, ResponseMessage = errorMessage};
             }
         }
     }

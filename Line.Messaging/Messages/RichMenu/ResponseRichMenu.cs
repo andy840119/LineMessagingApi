@@ -35,7 +35,6 @@ namespace Line.Messaging
 
         internal static ResponseRichMenu CreateFrom(dynamic dynamicObject)
         {
-
             var areas = new List<ActionArea>();
             foreach (var area in dynamicObject?.areas ?? Enumerable.Empty<dynamic>())
             {
@@ -44,13 +43,14 @@ namespace Line.Messaging
 
             var menu = new RichMenu()
             {
-                Name = (string)dynamicObject?.name,
-                Size = new ImagemapSize((int)(dynamicObject?.size?.width ?? 0), (int)(dynamicObject?.size?.height ?? 0)),
-                Selected = (bool)(dynamicObject?.selected ?? false),
-                ChatBarText = (string)dynamicObject?.chatBarText,
+                Name = (string) dynamicObject?.name,
+                Size = new ImagemapSize((int) (dynamicObject?.size?.width ?? 0),
+                    (int) (dynamicObject?.size?.height ?? 0)),
+                Selected = (bool) (dynamicObject?.selected ?? false),
+                ChatBarText = (string) dynamicObject?.chatBarText,
                 Areas = areas
             };
-            return new ResponseRichMenu((string)dynamicObject?.richMenuId, menu);
+            return new ResponseRichMenu((string) dynamicObject?.richMenuId, menu);
         }
     }
 }
