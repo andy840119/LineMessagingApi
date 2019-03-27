@@ -1,5 +1,9 @@
-﻿namespace Line.Messaging
+﻿using Line.Messaging.Json.Messages;
+using Newtonsoft.Json;
+
+namespace Line.Messaging
 {
+    [JsonConverter(typeof(MessageJsonConverter))]
     public interface ISendMessage
     {
         MessageType Type { get; }
