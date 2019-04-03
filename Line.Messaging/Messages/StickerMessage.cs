@@ -40,5 +40,9 @@
             StickerId = stickerId;
             QuickReply = quickReply;
         }
+
+        internal StickerMessage()
+        {
+        }
     }
 }

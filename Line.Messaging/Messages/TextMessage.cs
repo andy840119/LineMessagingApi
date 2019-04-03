@@ -36,5 +36,9 @@ namespace Line.Messaging
             Text = text.Substring(0, Math.Min(text.Length, 2000));
             QuickReply = quickReply;
         }
+
+        internal TextMessage()
+        {
+        }
     }
 }

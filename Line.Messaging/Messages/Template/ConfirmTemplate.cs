@@ -39,5 +39,9 @@ namespace Line.Messaging
             Text = text.Substring(0, Math.Min(text.Length, 240));
             Actions = actions ?? new List<ITemplateAction>();
         }
+
+        internal ConfirmTemplate()
+        {
+        }
     }
 }

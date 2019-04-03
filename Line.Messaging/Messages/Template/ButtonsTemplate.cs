@@ -122,5 +122,9 @@ namespace Line.Messaging
             ImageBackgroundColor = imageBackgroundColor;
             DefaultAction = defaultAction;
         }
+
+        internal ButtonsTemplate()
+        {
+        }
     }
 }

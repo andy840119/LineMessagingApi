@@ -38,6 +38,10 @@ namespace Line.Messaging
             AltText = altText.Substring(0, Math.Min(altText.Length, 400));
         }
 
+        internal FlexMessage()
+        {
+        }
+
         public static BubbleContainerFlexMessage CreateBubbleMessage(string altText)
         {
             return new BubbleContainerFlexMessage(altText)

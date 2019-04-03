@@ -57,5 +57,9 @@
             PreviewImageUrl = previerImageUrl;
             QuickReply = quickReply;
         }
+
+        internal ImageMessage()
+        {
+        }
     }
 }

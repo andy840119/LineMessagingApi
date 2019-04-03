@@ -46,5 +46,9 @@ namespace Line.Messaging
             Template = template;
             QuickReply = quickReply;
         }
+
+        internal TemplateMessage()
+        {
+        }
     }
 }

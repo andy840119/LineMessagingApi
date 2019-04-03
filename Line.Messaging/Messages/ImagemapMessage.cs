@@ -79,5 +79,9 @@ namespace Line.Messaging
             QuickReply = quickReply;
             Video = video;
         }
+
+        internal ImagemapMessage()
+        {
+        }
     }
 }

@@ -49,5 +49,9 @@
             Duration = duration;
             QuickReply = quickReply;
         }
+
+        internal AudioMessage()
+        {
+        }
     }
 }

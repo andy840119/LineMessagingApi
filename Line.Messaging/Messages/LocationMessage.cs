@@ -65,5 +65,9 @@ namespace Line.Messaging
             Longitude = longitude;
             QuickReply = quickReply;
         }
+
+        internal LocationMessage()
+        {
+        }
     }
 }
