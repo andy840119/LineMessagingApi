@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -19,6 +20,7 @@ namespace Line.Messaging
         /// / Maximum data size: 1 MB</para>
         /// <para>(Required)</para>
         /// </summary>
+        [JsonProperty("url")]
         public string Url { get; set; }
 
         /// <summary>

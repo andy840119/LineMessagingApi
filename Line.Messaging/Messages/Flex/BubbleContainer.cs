@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -28,6 +29,7 @@ namespace Line.Messaging
         /// Hero block. Specify an image component.
         /// <para>(Optional)</para>
         /// </summary>
+        [JsonProperty("hero")]
         public ImageComponent Hero { get; set; }
 
         /// <summary>
