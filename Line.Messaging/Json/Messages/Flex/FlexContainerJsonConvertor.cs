@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Line.Messaging.Json.Messages.Flex
 {
-    internal class FlexContainerConvertor : JsonConverter<IFlexContainer>
+    internal class FlexContainerJsonConvertor : JsonConverter<IFlexContainer>
     {
         public override IFlexContainer ReadJson(JsonReader reader, Type objectType, IFlexContainer existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
@@ -20,7 +20,7 @@ namespace Line.Messaging.Json.Messages.Flex
                 case FlexContainerType.Bubble:
                     return new BubbleContainer
                     {
-                        Header = new BoxComponent(),
+                        //Hero = new ImageComponent(),
                     };
                 case FlexContainerType.Carousel:
                     return new CarouselContainer();

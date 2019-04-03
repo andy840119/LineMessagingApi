@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace Line.Messaging
 {
-    [JsonConverter(typeof(FlexContainerConvertor))]
+    [JsonConverter(typeof(FlexContainerJsonConvertor))]
     public interface IFlexContainer
     {
         FlexContainerType Type { get; }
